@@ -4,14 +4,17 @@ import "./CharacterCard.css";
 function CharacterCard({ name, description, image }) {
   return (
     <div className="card-container">
+      <div className="content">
+        <div className="card-title">
+          <h1>{name}</h1>
+        </div>
+        <div className="card-description">{description}</div>
+      </div>
+
       <div className="img-container">
         <img src={image + ".jpg"} alt="" />
       </div>
-      <div className="card-title">
-        <h1>{name}</h1>
-      </div>
-      <div className="card-description">{description}</div>
-      <div className="btn">
+      <div className="comic-btn">
         <button>
           <a>View Comics</a>
         </button>
