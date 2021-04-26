@@ -6,7 +6,6 @@
 
 .header-container {
   background-color: #323535;
-
   /* background: blue; */
   margin: 30px auto;
   width: 100%;
@@ -40,6 +39,22 @@ button {
 
   /* margin: 500px; */
 }
+
+.comic-cards {
+  background: green;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 25rem);
+  gap: 20px;
+  padding-top: 10px;
+  padding-left: 20px;
+  margin-top: 79px;
+  /* position: relative; */
+
+  /* height: 300px; */
+  /* width: 200px; */
+  /* position: relative; */
+}
+
 /* .title {
   width: 200px;
   margin-bottom: 100px;

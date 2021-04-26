@@ -14,7 +14,7 @@ function CharacterCard({ name, description, image }) {
       <div className="img-container">
         <img src={image + ".jpg"} alt="" />
       </div>
-      <div className="comic-btn">
+      <div className="character-btn">
         <button>
           <a>View Comics</a>
         </button>

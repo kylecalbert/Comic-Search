@@ -3,6 +3,7 @@ import "./App.css";
 import CharacterCard from "./components/CharacterCard.js";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import ComicList from "./components/ComicList.js";
 
 function App() {
   const PUBLIC_KEY = "19a75b8c75d2b570d4ad8c9257b748d2";
@@ -34,8 +35,8 @@ function App() {
       `https://gateway.marvel.com:443/v1/public/characters/${comic_id}/comics?apikey=${PUBLIC_KEY}`
     );
     const data = await response.json();
-    console.log(data);
-    setComicData(data.results);
+    setComicData(data.data.results);
+    console.log(data.data.results);
   };
   const HandleOnSubmit = (e) => {
     e.preventDefault();
@@ -55,6 +56,7 @@ function App() {
           </form>
         </div>
       </div>
+
       <div className="char-container">
         {characterData.map((characterData) => (
           <CharacterCard
@@ -63,6 +65,11 @@ function App() {
             description={characterData.description}
             image={characterData.thumbnail.path}
           /> // for each item in recipe get RECIPE COMPONENT and set data values
+        ))}
+      </div>
+      <div className="comic-cards">
+        {comicData.map((comicData) => (
+          <ComicList key={uuidv4()} image={comicData.thumbnail.path} />
         ))}
       </div>
     </div>
