@@ -1,26 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CharacterCard.css";
 
 function CharacterCard({ name, description, image }) {
   return (
-    <div className="card-container">
-      <div className="content">
-        <div className="card-title">
-          <h1>{name}</h1>
-        </div>
-        <div className="card-description">{description}</div>
-      </div>
-
-      <div className="img-container">
+    <div className="char-card-container">
+      <div className="char-img-container">
         <img src={image + ".jpg"} alt="" />
       </div>
-      <div className="character-btn">
-        <button>
-          <a>View Comics</a>
-        </button>
+      <div className="char-content-container">
+        <div className="char-name">{name}</div>
+        <div className="char-description">{description}</div>
+        <div className="view-comics-btn">
+          {/* <button>
+            <a>View comics</a>
+            <a />
+          </button> */}
+        </div>
       </div>
     </div>
   );
 }
-
 export default CharacterCard;

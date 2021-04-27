@@ -5,7 +5,8 @@
 }
 
 .header-container {
-  background-color: #323535;
+  background-color: #8c242d;
+
   /* background: blue; */
   margin: 30px auto;
   width: 100%;
@@ -34,14 +35,14 @@ button {
 .char-container {
   display: flex;
   margin-top: -84px;
-  background: red;
+  /* background: red; */
   justify-content: center;
 
   /* margin: 500px; */
 }
 
 .comic-cards {
-  background: green;
+  /* background: green; */
   display: grid;
   grid-template-columns: repeat(auto-fit, 25rem);
   gap: 20px;
@@ -55,14 +56,9 @@ button {
   /* position: relative; */
 }
 
-/* .title {
-  width: 200px;
-  margin-bottom: 100px;
-  background: rgba(238, 84, 84);
-  text-align: center;
-  border-radius: 5px;
-  align-items: center;
-} */
+.title {
+  color: white;
+}
 /* 
 h1 {
   font-size: 20px;
