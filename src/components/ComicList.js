@@ -10,7 +10,9 @@ function ComicList({ title, image, description }) {
           </div>
         </div>
         <div className="comic-card-back">
-          <h1>sahjashjajs</h1>
+          <div className="comic-title">
+            <h1>{title}</h1>
+          </div>
         </div>
       </div>
     </div>

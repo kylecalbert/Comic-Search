@@ -69,7 +69,11 @@ function App() {
       </div>
       <div className="comic-cards">
         {comicData.map((comicData) => (
-          <ComicList key={uuidv4()} image={comicData.thumbnail.path} />
+          <ComicList
+            key={uuidv4()}
+            image={comicData.thumbnail.path}
+            title={comicData.title}
+          />
         ))}
       </div>
     </div>
