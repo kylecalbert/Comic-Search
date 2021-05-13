@@ -25,7 +25,6 @@ function App() {
     const response = await fetch(CHARACTER_API_URL);
     const data = await response.json();
     const comic_id = parseInt(data.data.results[0].id);
-    console.log(comic_id);
     getComics(comic_id);
     setCharacterData(data.data.results);
   };
