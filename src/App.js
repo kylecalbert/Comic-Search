@@ -10,6 +10,7 @@ function App() {
   const [search, setSearch] = useState(" ");
   const [characterData, setCharacterData] = useState([]);
   const [comicData, setComicData] = useState([]);
+  const [showComics, setShowComics] = useState(false);
 
   const CHARACTER_API_URL = `https://gateway.marvel.com:443/v1/public/characters?name=${search}&apikey=${PUBLIC_KEY}`;
 
@@ -20,6 +21,10 @@ function App() {
   //   getCharacters();
   //   console.log("EFFECT HAS BEEN RUN");
   // }, []);
+
+  useEffect(() => {
+    setShowComics(false);
+  }, [comicData]);
 
   const getCharacters = async () => {
     const response = await fetch(CHARACTER_API_URL);
@@ -63,18 +68,24 @@ function App() {
             name={characterData.name}
             description={characterData.description}
             image={characterData.thumbnail.path}
+            showComics={(showComics) => setShowComics(showComics)}
           /> // for each item in recipe get RECIPE COMPONENT and set data values
         ))}
       </div>
-      <div className="comic-cards">
-        {comicData.map((comicData) => (
-          <ComicList
-            key={uuidv4()}
-            image={comicData.thumbnail.path}
-            title={comicData.title}
-          />
-        ))}
-      </div>
+
+      {showComics ? (
+        <div className="comic-cards">
+          {comicData.map((comicData) => (
+            <ComicList
+              key={uuidv4()}
+              image={comicData.thumbnail.path}
+              title={comicData.title}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="comic-cards"></div>
+      )}
     </div>
   );
 }

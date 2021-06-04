@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CharacterCard.css";
 
-function CharacterCard({ name, description, image }) {
+function CharacterCard({ name, description, image, showComics }) {
   return (
     <div className="char-card-container">
       <div className="char-img-container">
@@ -11,10 +11,10 @@ function CharacterCard({ name, description, image }) {
         <div className="char-name">{name}</div>
         <div className="char-description">{description}</div>
         <div className="view-comics-btn">
-          {/* <button>
+          <button onClick={() => showComics(true)}>
             <a>View comics</a>
             <a />
-          </button> */}
+          </button>
         </div>
       </div>
     </div>
